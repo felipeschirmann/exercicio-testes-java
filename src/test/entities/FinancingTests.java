@@ -27,4 +27,13 @@ public class FinancingTests {
 		obj.setIncome(expected);
 		Assertions.assertEquals(obj.getIncome(), expected);
 	}
+	
+	@Test
+	public void financingShouldThrowExecptionWhenDataToUpdateIsIncorect() {
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Financing obj = new Financing(100000.00, 4000.00, 40);
+			Double expected = 3000.00;
+			obj.setIncome(expected);
+		});
+	}
 }
