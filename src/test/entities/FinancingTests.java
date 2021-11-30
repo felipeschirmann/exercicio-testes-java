@@ -19,4 +19,12 @@ public class FinancingTests {
 			Financing obj = new Financing(100000.00, 4000.00, 20);
 		});
 	}
+	
+	@Test
+	public void financingShouldUpdateWhenDataIsIncorect() {
+		Financing obj = new Financing(100000.00, 4000.00, 40);
+		Double expected = 50000.00;
+		obj.setIncome(expected);
+		Assertions.assertEquals(obj.getIncome(), expected);
+	}
 }
