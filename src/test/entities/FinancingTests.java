@@ -64,4 +64,11 @@ public class FinancingTests {
 			Financing obj = new Financing(100000.00, 2000.00, 20);
 		});
 	}
+	
+	@Test
+	public void financingShouldCalculateEntryWhenDataIsCorect() {
+		Financing obj = new Financing(100000.00, 4000.00, 40);
+		Assertions.assertEquals(obj.entry(), 20000);
+	}
+
 }
